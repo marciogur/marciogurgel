@@ -1,31 +1,129 @@
+/* soft reset do css*/
+* {
+  margin: 0;
+  padding:  0;
+  border: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background: #303841;
-    font-family: Arial; 
+  background-image: url('../img/mg-bg.png');
+  font-family: 'Yanone Kaffeesatz', monospace;
+  color: #f2ea78;
+  font-size: 14px; 
+  text-shadow: 1px 1px 2px #133a53;
+}
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos*/
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
   }
-  .menu {
-    background: #3a4750;
-  } 
-  .menu ul {
+}
+
+/* breakpoint = quais os pontos de quebra de tela que carecem ajustes */
+@media (min-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+    background: #2c4682;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+} 
+
+.menu ul {
     display: flex;
     justify-content: space-around;
+ }
+
+.menu li {
+  list-style: none;
+  text-decoration-color: #f1e74e;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+}
+
+a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: #b3dffc underline;
+  background-color: #2e6592;
+  border-radius: 4px;
+}
+
+.site-title {
+  color: #94d3fd;
+  text-align: center;
+  text-shadow: 2px 1px 3px #133a53;
+}
+
+.site-title {
+  font-size: 4em;
+  font-family: 'Yanone Kaffeesatz';
+}
+
+.site-subtitle {
+  font-style: normal;
+  font-family: 'Yeseva One';
+  color: #d56e1f;
+  text-align: center;
+  text-shadow: 2px 1px 3px #1b4763;
   }
-  .menu li {
-    list-style: none;
+
+.site-subtitle2 {
+   font-family: 'yeseva one';
+   color: #dca038;
+   font-size: 36px;
+   text-align: center;
+   text-shadow: 2px 1px 3px #1c4158;
+   line-height: 0.44em;
   }
-  a {
-    color: #eeeeee;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .site-subtitle,
-  .site-title {
-    color: #00adb5;
-    text-align: center;
-  }
-  .site-subtitle {
-    font-style: bold;
-  }
-  
-  
+
+.portFólio {
+  padding: 4px;
+  background-color: #2c4682;
+}
+
+.portFólio h2 {
+  padding: 4px  ;
+  margin-bottom: 1em;
+  font-family: 'Yanone Kaffeesatz';
+  color: #f2ea78;
+  font-size: 24px;
+  text-align: center;
+}
+
+.img-portfolio {
+  margin-bottom: 2px;
+  margin-top: 2em;
+  padding: 3px; 
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+  background-color: #cde7fd;
+  box-shadow: 3px 3px 3px #17384d;
+}
+
+.portFólio figure {
+  margin-bottom: 2em;
+  text-align: center;
+  font-size: 18px;
+} 
