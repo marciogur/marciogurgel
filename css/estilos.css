@@ -18,6 +18,7 @@ body {
 @media (min-width: 600px) {
   body {
     font-size: 14px;
+    text-align: center;
   }
 }
 
@@ -29,7 +30,7 @@ body {
 }
 
 header {
-  height: 1080px;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -41,6 +42,7 @@ header {
     position: fixed;
     width: 100vw;
     top: 0;
+    z-index: 1;
 } 
 
 .menu ul {
@@ -53,30 +55,47 @@ header {
   text-decoration-color: #f1e74e;
 }
 
-.menu a {
-  display: block;
-  padding: 10px;
-}
-
-.menu a:hover {
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 01.5);
-  transition: background-color 1s, shadow 1s;
-}
-
-.menu a:active {
-  text-shadow: 0 0 0 0;
-  background-color: rgb(213, 222, 247);
-  color: #4d4d94;
-}
-
 a {
   color: #eeeeee;
   text-decoration: none;
 }
 
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 3s, color 1s;
+}
+
+.menu a:active {
+  text-shadow: 0 1px 1px 1px;
+  background-color: rgb(213, 222, 247);
+  color:  #1deedd80;
+}
+
 .menu a:hover {
-  background-color: rgba(24, 45,120, 0.5);
+  background-color: #25c57a80;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 01.5);
+  transition: background-color 1s, shadow 1s;
   border-radius: 2px;
+}
+
+.Titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  transition: all 2s;
+  animation: 2s linear 1s animeTitulo forwards;
+}
+
+@keyframes animeTitulo {
+  from {
+    transform: scale(0.1) translateY(50vh);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    transition: ease-in;
+    opacity: 1;
+  }
 }
 
 .site-title {
@@ -99,25 +118,50 @@ a {
   }
 
 .site-subtitle2 {
-   font-family: 'yeseva one';
-   color: #dca038;
-   font-size: 36px;
-   text-align: center;
-   text-shadow: 2px 1px 3px #1c4158;
-   line-height: 0.44em;
-  }
+  font-family: 'yeseva one';
+  color: #dca038;
+  font-size: 36px;
+  text-align: center;
+  text-shadow: 2px 1px 3px #1c4158;
+  line-height: 0.44em;
+}
 
+.sobre {
+  background: #201e1f;
+  height: 400px;
+  width: 100vw;
+  border: 24px;
+  padding: 12px;
+}
+
+.sobre p {
+  text-align: justify;
+  text-indent: 4em;
+  margin-left: 4em;
+}
+
+.sobre h2 {
+  background-position-x: left;
+  text-align: center;
+  letter-spacing: 20px left;
+  margin: 5px;
+  border: 8px;
+  padding: 8px;
+}
+  
+.contato,
 .portFólio {
-  padding: 24px;
+  padding: 12px;
   background-color: #2c4682;
   width: 100vw;
   min-height: 100vh;
 }
 
+.contato,
 .portFólio h2 {
   padding: 1px;
   margin-bottom: 1em;
-  margin-top: 4px;
+  margin-top: 10px;
   font-family: 'Yanone Kaffeesatz';
   color: #f2ea78;
   font-size: 26px;
@@ -127,62 +171,67 @@ a {
 .portFólio .grid {
   display: grid;
   gap: 2em;
-  grid-template-columns: 300px 300px 300px;
 }
 
-@media (min-width: 280px) {
-.portFólio .grid { 
-  grid-template-columns: repeat(3,300px);
-  align-content: center;
+@media (min-width: 560px) {
+  .portFólio .grid {
+    grid-template-columns: 300px 360px;
   }
 }
 
-.portFólio figure {
+@media (min-width: 880px) {
+  .portFólio .grid {
+    grid-template-columns: repeat(2, 480px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 48px - 8em);
+  }
+}
+
+.portFólio {
+  margin-bottom: 2em;
   text-align: center;
+  font-size: 16px;
 }
 
 .img-portfolio {
-  object-position: center;
-  margin-top: 2em;
-  padding: 1px;
-  height: 260px;
-  width: 260px;
+  height: 300px;
+  width: 300px;
   background-color: #cde7fd;
   box-shadow: 3px 3px 3px #17384d;
+  border-radius: 3px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms;
 }
 
-@media (min-width: 1200px) {
-  .img-portfolio {
-    height: auto;
-    width: 100%;
-  }
-}
-
-.portFólio figure {
-  margin-bottom: 2em;
-  text-align: center;
-  font-size: 18px;
+.img-portfolio:hover {
+  transform: scale(1.01) rotate(2deg);
 }
 
 .grid.icons {
   margin: 8px;
   border: 5px;
-  color: whitesmoke;
-  font-size: 2em;
+  color: whitesmoke; 
+  font-size: 38px;
   text-align: center;
 }
 
-.contato a:active {
-  text-decoration-color: none;
-  text-shadow: 0px 2px 2px rgba(255, 255, 255, 01.5);
-  transition: text-shadow 3s, color 2s;
+.contato a {
+  font-size: 4em;
+  transition: text-shadow 1s;
 }
 
 .contato a:hover {
-  text-decoration-color: none;
-  text-shadow: 0px 2px 2px rgba(255, 255, 255, 01.5);
+  text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.5);
   transition: text-shadow 3s, color 2s;
 } 
+
+.contato a:active {
+  text-decoration-color: none;
+  text-shadow: 0px 0px 10px black;
+  transition: text-shadow 3s, color 2s;
+}
 
 .Contato h2 {
   text-align: center;
@@ -191,3 +240,4 @@ a {
   width: 100vw;
   min-height: 48px;
 }
+
